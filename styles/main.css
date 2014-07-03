@@ -117,6 +117,27 @@ h2.etech {
 	color: #B00F97;
 }
 
+.item {
+	position: relative;
+}
+
+.item .got-it:before {
+	position: absolute;
+	height: calc(100% - 44px);
+	width: 100%;
+	left: 0;
+	top: 0;
+	background-color: rgba(0, 0, 0, 0.9);
+
+	content: ' ';
+
+	transition: opacity 0.5s linear;
+}
+
+.item .got-it.really:before {
+	opacity: 0;
+}
+
 .item h2 {
 	font-size: 24px;
 	font-family: 'Compacta';
