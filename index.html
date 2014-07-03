@@ -19,6 +19,16 @@
 		<div id="uniques-list" class="list">
 			<h2 class="header uniques">Uniques</h2>
 		</div>
+
+		<div id="seraph-list" class="list">
+			<h2 class="header seraph">Seraph</h2>
+		</div>
+		<div id="pearl-list" class="list">
+			<h2 class="header pearl">Pearlescent</h2>
+		</div>
+		<div id="etech-list" class="list">
+			<h2 class="header etech">E-Tech</h2>
+		</div>
 		<template id="item">
 			<div class="item">
 				<h2 class="item-name">Item Name</h2>
@@ -29,36 +39,105 @@
 		</template>
 
 		<script type="text/javascript">
+			var itemList = [
+				{
+					name: "legendary",
+					items: [
+						{
+							name: "Striker",
+							flair: "Fandir? Thirteen.",
+							id: 1
+						},
+						{
+							name: "Deliverance",
+							flair: "Kiki got a shotgun",
+							id: 2
+						},
+					]
+				},
+				{
+					name: "uniques",
+					items: [
+						{
+							name: "",
+							flair: "",
+							id: -1
+						}
+					]
+				},
+				{
+					name: "seraph",
+					items: [
+						{
+							name: "",
+							flair: "",
+							id: -1
+						}
+					]
+				},
+				{
+					name: "pearl",
+					items: [
+						{
+							name: "",
+							flair: "",
+							id: -1
+						}
+					]
+				},
+				{
+					name: "etech",
+					items: [
+						{
+							name: "",
+							flair: "",
+							id: -1
+						}
+					]
+				},
+
+			];
+
 			var t = document.querySelector('#item');
-			var legen = document.querySelector("#legendary-list");
+			var clone = document.importNode(t.content, true);
 
-			var clone = document.importNode(t.content, true);
-			legen.appendChild(clone);
-			var clone = document.importNode(t.content, true);
-			legen.appendChild(clone);
-			var clone = document.importNode(t.content, true);
-			legen.appendChild(clone);
-			var clone = document.importNode(t.content, true);
-			legen.appendChild(clone);
-			var clone = document.importNode(t.content, true);
-			legen.appendChild(clone);
-			var clone = document.importNode(t.content, true);
-			legen.appendChild(clone);
-			var clone = document.importNode(t.content, true);
-			legen.appendChild(clone);
-			var clone = document.importNode(t.content, true);
-			legen.appendChild(clone);
-			var clone = document.importNode(t.content, true);
-			legen.appendChild(clone);
-			var clone = document.importNode(t.content, true);
-			legen.appendChild(clone);
-			var clone = document.importNode(t.content, true);
-			legen.appendChild(clone);
-			var clone = document.importNode(t.content, true);
-			legen.appendChild(clone);
-			var clone = document.importNode(t.content, true);
-			legen.appendChild(clone);
+			for (var key in itemList) {
+				var target = "#" + itemList[key].name + "-list";
+				var domElement = document.querySelector(target);
 
+				for (var i in itemList[key].items) {
+					var clone = document.importNode(t.content, true);
+					var id = itemList[key].items[i].id;
+					clone.querySelector('.item').setAttribute("data-weapon-id", id);
+					clone.querySelector('.item-name').textContent = itemList[key].items[i].name;
+					clone.querySelector('.item-flair').textContent = itemList[key].items[i].flair;
+
+					(function(_id) {
+						clone.querySelector('.got-it').addEventListener("click", function() {
+							if (!this.classList.contains('really')) {
+							  this.classList.add("really");
+							}
+							else {
+								this.classList.remove('really');
+							}
+
+							var ownedItems = localStorage.getItem('owned') ? JSON.parse(localStorage.getItem('owned')) : {};
+							ownedItems[_id] = !ownedItems[_id];
+							localStorage.setItem('owned', JSON.stringify(ownedItems));
+						});
+					})(id);
+
+					domElement.appendChild(clone);
+				}
+			}
+
+			var ownedItems = localStorage.getItem('owned') ? JSON.parse(localStorage.getItem('owned')) : {};
+			for (var i in ownedItems) {
+				var target = document.querySelector('.item[data-weapon-id="' + i + '"]');
+				if (ownedItems[i]) {
+					target.querySelector('.got-it').classList.add('really');
+				}
+			}
 		</script>
 	</body>
 </html>

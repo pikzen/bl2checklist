@@ -64,7 +64,19 @@ h2.legendaries {
 }
 
 h2.uniques {
-	color: #456EB0
+	color: #456EB0;
+}
+
+h2.seraph {
+	color: #D090A1;
+}
+
+h2.pearl {
+	color: #0FB5A7
+}
+
+h2.etech {
+	color: #B00F97;
 }
 
 .item {
@@ -85,10 +97,29 @@ h2.uniques {
 	opacity: 0.8;
 }
 
-.item h2 {
-	font-size: 16px;
-	font-family: 'Compacta';
+#legendary-list .item h2 {
 	color: orange;
+}
+
+#uniques-list .item h2 {
+	color: #456EB0;
+}
+
+#seraph-list .item h2 {
+	color: #D090A1;
+}
+
+#pearl-list .item h2 {
+	color: #0FB5A7;
+}
+
+#etech-list .item h2 {
+	color: #B00F97;
+}
+
+.item h2 {
+	font-size: 24px;
+	font-family: 'Compacta';
 	text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
 	letter-spacing: 2px;
 	border-bottom: 1px solid #DCDCDC;
@@ -97,7 +128,7 @@ h2.uniques {
 }
 
 .item-image {
-	min-height: 120px;
+	/*min-height: 120px;*/
 	border-bottom: 1px solid #DCDCDC;
 }
 
