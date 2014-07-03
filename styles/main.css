@@ -1,0 +1,152 @@
+@font-face{
+    font-family : "Compacta";
+    src : url('../fonts/CompactBoldBt.ttf');
+}
+
+html {
+	background-image: url('http://www.dpaperwall.com/wp-content/uploads/Borderlands-2-Desktop-Background-HD-Wallpaper.jpg');
+	background-size: cover;
+}
+
+body {
+	background-color: rgba(0, 0, 0, 0.8);
+	background-size: cover;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.search-bar {
+	margin-bottom: 40px;
+}
+
+.search-bar input {
+	height : 40px;
+	line-height: 40px;
+	width: 80%;
+	text-align: center;
+	font-family: 'Open Sans';
+	font-size: 24px;
+	font-weight: 200;
+	border-radius: 2px;
+	border: none;
+}
+
+h1 {
+	text-align: center;
+	font-family: 'Compacta';
+	color: #F8FB4D;
+	letter-spacing: 2px;
+	font-size: 72px;
+	margin-top: 0;
+	padding-top: 30px;
+	text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+
+h2 {
+	font-size: 24px;
+	font-family: 'Compacta';
+	text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+	letter-spacing: 2px;
+	text-align: left;
+	padding-bottom: 16px;
+}
+
+.list {
+	width: 90%;
+	margin: 0 auto;
+}
+
+h2.legendaries {
+	color: orange;
+}
+
+h2.uniques {
+	color: #456EB0
+}
+
+.item {
+	display: inline-block;
+	background-color: #FFF;
+	width: 300px;
+	box-shadow: 0 0 1px 1px #111;
+	margin-left: 40px;
+	margin-bottom: 30px;
+	font-family: 'Open Sans';
+}
+
+.item.disabled:before{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-color: black;
+	opacity: 0.8;
+}
+
+.item h2 {
+	font-size: 16px;
+	font-family: 'Compacta';
+	color: orange;
+	text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+	letter-spacing: 2px;
+	border-bottom: 1px solid #DCDCDC;
+	padding-bottom: 16px;
+	text-align: center;
+}
+
+.item-image {
+	min-height: 120px;
+	border-bottom: 1px solid #DCDCDC;
+}
+
+.item-flair {
+	color: red;
+	font-family: 'Open Sans';
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.got-it {
+	font-weight: 200;
+	padding: 12px;
+	border-top: 1px solid #DCDCDC;
+}
+
+.got-it.really .custom-checkbox {
+	color: #0099CC;
+	text-indent: 0;
+}
+
+.got-it.really:hover .custom-checkbox {
+	color: #0099cc;
+}
+
+.got-it.really {
+	background-color: #DCDCDC;
+}
+
+.got-it:hover {
+	cursor: pointer;
+	background-color: #EBEBEB;
+}
+
+.got-it:hover .custom-checkbox {
+	text-indent: 0;
+	color: rgba(0, 0, 0, 0.8);
+}
+
+.custom-checkbox {
+	width: 14px;
+	height: 14px;
+	border: 1px solid #888;
+	border-radius: 2px;
+	display: inline-block;
+	margin-bottom: -2px;
+	margin-right: 20px;
+	text-indent: -9999px;
+	color: rgba(0, 0, 0, 0);
+	line-height: 14px;
+	transition: color 0.2s linear;
+}

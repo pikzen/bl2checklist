@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Borderlands 2 Checklist</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="styles/main.css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<h1>Borderlands 2 Checklist</h1>
+
+		<div class="search-bar">
+			<input type="text" placeholder="Search">
+		</div>
+
+		<div id="legendary-list" class="list">
+			<h2 class="header legendaries">Legendaries</h2>
+		</div>
+		<div id="uniques-list" class="list">
+			<h2 class="header uniques">Uniques</h2>
+		</div>
+		<template id="item">
+			<div class="item">
+				<h2 class="item-name">Item Name</h2>
+				<img src="" class="item-image">
+				<h3 class="item-flair">Cold in April</h3>
+				<div class="got-it"><div class="custom-checkbox">✓</div>Obtenu !</div>
+			</div>
+		</template>
+
+		<script type="text/javascript">
+			var t = document.querySelector('#item');
+			var legen = document.querySelector("#legendary-list");
+
+			var clone = document.importNode(t.content, true);
+			legen.appendChild(clone);
+			var clone = document.importNode(t.content, true);
+			legen.appendChild(clone);
+			var clone = document.importNode(t.content, true);
+			legen.appendChild(clone);
+			var clone = document.importNode(t.content, true);
+			legen.appendChild(clone);
+			var clone = document.importNode(t.content, true);
+			legen.appendChild(clone);
+			var clone = document.importNode(t.content, true);
+			legen.appendChild(clone);
+			var clone = document.importNode(t.content, true);
+			legen.appendChild(clone);
+			var clone = document.importNode(t.content, true);
+			legen.appendChild(clone);
+			var clone = document.importNode(t.content, true);
+			legen.appendChild(clone);
+			var clone = document.importNode(t.content, true);
+			legen.appendChild(clone);
+			var clone = document.importNode(t.content, true);
+			legen.appendChild(clone);
+			var clone = document.importNode(t.content, true);
+			legen.appendChild(clone);
+			var clone = document.importNode(t.content, true);
+			legen.appendChild(clone);
+
+		</script>
+	</body>
+</html>
