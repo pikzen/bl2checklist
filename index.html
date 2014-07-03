@@ -1,170 +1,1050 @@
 <!doctype html>
 <html>
-	<head>
-		<title>Borderlands 2 Checklist</title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="styles/main.css">
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
-	</head>
-	<body>
-		<h1>Borderlands 2 Checklist</h1>
+<head>
+	<title>Borderlands 2 Checklist</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<h1>Borderlands 2 Checklist</h1>
 
-		<div class="search-bar">
-			<input type="text" placeholder="Search // Not Working">
-		</div>
+	<div class="search-bar">
+		<input type="text" placeholder="Search // Not Working">
+	</div>
 
-		<div id="legendary-list" class="list">
-			<h2 class="header legendaries">Legendaries</h2>
-		</div>
-		<div id="uniques-list" class="list">
-			<h2 class="header uniques">Uniques</h2>
-		</div>
+	<div id="legendary-list" class="list">
+		<h2 class="header legendaries">Legendaries</h2>
+	</div>
+	<div id="unique-list" class="list">
+		<h2 class="header uniques">Uniques</h2>
+	</div>
 
-		<div id="seraph-list" class="list">
-			<h2 class="header seraph">Seraph</h2>
+	<div id="seraph-list" class="list">
+		<h2 class="header seraph">Seraph</h2>
+	</div>
+	<div id="pearl-list" class="list">
+		<h2 class="header pearl">Pearlescent</h2>
+	</div>
+	<div id="etech-list" class="list">
+		<h2 class="header etech">E-Tech</h2>
+	</div>
+	<template id="item">
+		<div class="item">
+			<h2 class="item-name">Item Name</h2>
+			<div class="overlay"></div>
+			<img src="" class="item-image">
+			<h3 class="item-flair">Cold in April</h3>
+			<div class="got-it"><div class="custom-checkbox">✓</div>Obtenu !</div>
 		</div>
-		<div id="pearl-list" class="list">
-			<h2 class="header pearl">Pearlescent</h2>
-		</div>
-		<div id="etech-list" class="list">
-			<h2 class="header etech">E-Tech</h2>
-		</div>
-		<template id="item">
-			<div class="item">
-				<h2 class="item-name">Item Name</h2>
-				<div class="overlay"></div>
-				<img src="" class="item-image">
-				<h3 class="item-flair">Cold in April</h3>
-				<div class="got-it"><div class="custom-checkbox">✓</div>Obtenu !</div>
-			</div>
-		</template>
+	</template>
 
-		<script type="text/javascript">
-			var itemList = [
+	<script type="text/javascript">
+		var itemList = [
+		{
+			name:"legendary", 
+			items:  [
 				{
-					name: "legendary",
-					items: [
-						{
-							name: "Striker",
-							flair: "Fandir? Thirteen.",
-							id: 1
-						},
-						{
-							name: "Deliverance",
-							flair: "Kiki got a shotgun",
-							id: 2
-						}
-					]
+					name:"Gub",
+					flair:"Abt Natural",
+					id:0
 				},
 				{
-					name: "uniques",
-					items: [
-						{
-							name: 'Fibber',
-							flair: 'Would I lie to you?',
-							id: 5
-						},
-						{
-							name: 'Flynt\'s Tinderbox',
-							flair: 'Good for starting fires',
-							id: 6
-						},
-						{
-							name: 'Greed',
-							flair: 'Thief.',
-							id: 7
-						}
-					]
+					name:"Gunerang",
+					flair:"Give it a burl.",
+					id:1
 				},
 				{
-					name: "seraph",
-					items: [
-						{
-							name: 'Devastator',
-							flair: 'Hail.',
-							id: 4
-						}
-					]
+					name:"Hornet",
+					flair:"Fear the swarm!",
+					id:2
 				},
 				{
-					name: "pearl",
-					items: [
-						{
-							name: 'Stalker',
-							flair: 'You can run, but you can\'t hide',
-							id: 8
-						}
-					]
+					name:"Infinity",
+					flair:"It\'s closer than you think! (no it isn\'t)",
+					id:3
 				},
 				{
-					name: "etech",
-					items: [
-						{
-							name: 'Dahlminator',
-							flair: 'Dodge this.',
-							id: 3
-						}
-					]
+					name:"Logan\'s Gun",
+					flair:"Gun, Gunner!",
+					id:4
 				},
+				{
+					name:"Maggie",
+					flair:"Monty\'s wife don\'t take no guff.",
+					id:5
+				},
+				{
+					name:"Thunderball Fists",
+					flair:"I can have such a thing?",
+					id:6
+				},
+				{
+					name:"Unkempt Harold",
+					flair:"Did I fire six shots, or only five ? Three? Seven. Whatever.",
+					id:7
+				},
+				{
+					name:"Conference Call",
+					flair:"Let\'s just ping everyone all at once.",
+					id:8
+				},
+				{
+					name:"Deliverance",
+					flair:"Kiki got a shotgun",
+					id:9
+				},
+				{
+					name:"Flakker",
+					flair:"Flak the World",
+					id:10
+				},
+				{
+					name:"Sledge\'s Shotgun",
+					flair:"The Legend Lives",
+					id:11
+				},
+				{
+					name:"Striker",
+					flair:"Fandir? Thirteen.",
+					id:12
+				},
+				{
+					name:"Hammer Buster",
+					flair:"Gar! Gorarr! My dad\'s a scientist! GWARRRR!!!!",
+					id:13
+				},
+				{
+					name:"KerBlaster",
+					flair:"Torgue got more BOOM!",
+					id:14
+				},
+				{
+					name:"Madhous!",
+					flair:"It\'s a Madhouse! A MADHOUSE!!!",
+					id:15
+				},
+				{
+					name:"Ogre",
+					flair:"Ogre chew their food",
+					id:16
+				},
+				{
+					name:"Shredifier",
+					flair:"Speed kills.",
+					id:17
+				},
+				{
+					name:"Veruc",
+					flair:"I want that rifle, Daddy",
+					id:18
+				},
+				{
+					name:"Invade",
+					flair:"The Executioner has arrived.",
+					id:19
+				},
+				{
+					name:"Longbow",
+					flair:"Ceci n\'est pas une sniper rifle!",
+					id:20
+				},
+				{
+					name:"Lyuda",
+					flair:"Man Killer",
+					id:21
+				},
+				{
+					name:"Pitchfork",
+					flair:"Mainstream\'d!",
+					id:22
+				},
+				{
+					name:"Skullmasher",
+					flair:"Makes your brain hurt.",
+					id:23
+				},
+				{
+					name:"Volcano",
+					flair:"Pele humbly requests a sacrifice, if it\'s not too much trouble.",
+					id:24
+				},
+				{
+					name:"Badaboom",
+					flair:"Multi-kill.",
+					id:25
+				},
+				{
+					name:"bunny",
+					flair:"Hippity Hoppity!",
+					id:26
+				},
+				{
+					name:"Mongol",
+					flair:"The Horde will always return!",
+					id:27
+				},
+				{
+					name:"Norfleet",
+					flair:"Blows Up Everything!!!",
+					id:28
+				},
+				{
+					name:"Nukem",
+					flair:"Name dropper.",
+					id:29
+				},
+				{
+					name:"Pyrophobia",
+					flair:"It\'s actually a fairly rational fear in this case.",
+					id:30
+				},
+				{
+					name:"Baby Maker",
+					flair:"Who\'s a widdle gunny wunny!!!",
+					id:31
+				},
+				{
+					name:"Bitch",
+					flair:"yup. back.",
+					id:32
+				},
+				{
+					name:"Emperor",
+					flair:"you know... for him.",
+					id:33
+				},
+				{
+					name:"HellFire",
+					flair:"We don't need no fire...",
+					id:34
+				},
+				{
+					name:"Slagga",
+					flair:"blagaga",
+					id:35
+				},
+				{
+					name:"The Bee",
+					flair:"Float like a butterfly...",
+					id:36
+				},
+				{
+					name:"Black Hole",
+					flair:"You are the center of the universe.",
+					id:37
+				},
+				{
+					name:"The Cradle",
+					flair:"...to the grave",
+					id:38
+				},
+				{
+					name:"Fabled Tortoise",
+					flair:"Win by a hare",
+					id:39
+				},
+				{
+					name:"Flame of the Firehawk",
+					flair:"From the ashes she will rise.",
+					id:40
+				},
+				{
+					name:"Hide of Terramorphous",
+					flair:"...His hide turned the mightiest tame...",
+					id:41
+				},
+				{
+					name:"Impaler",
+					flair:"Vlad would be proud.",
+					id:42
+				},
+				{
+					name:"Neogenator",
+					flair:"For an impenetrable shield stand inside yourself.",
+					id:43
+				},
+				{
+					name:"The Sham",
+					flair:"Wow, I CAN do this all day.",
+					id:44
+				},
+				{
+					name:"The Transformer",
+					flair:"There\'s more than your eye can see.",
+					id:45
+				},
+				{
+					name:"Whisky Tango Foxtrot",
+					flair:"Situation normal... ...all foxtroted up.",
+					id:46
+				},
+				{
+					name:"Bonus Package",
+					flair:"2x more awesome, bonus extreme!",
+					id:47
+				},
+				{
+					name:"Bouncing Bonny",
+					flair:"Your sister is such a bitch.",
+					id:48
+				},
+				{
+					name:"Chain Lightning",
+					flair:"Don\'t pay it back, pay it forward.",
+					id:49
+				},
+				{
+					name:"Fastball",
+					flair:"Forget the curveball Ricky, give him the heater.",
+					id:50
+				},
+				{
+					name:"Fire Bee",
+					flair:"Bees are coming!",
+					id:51
+				},
+				{
+					name:"Fire Storm",
+					flair:"What manner of man are you that can summon up fire without flint or tinder?",
+					id:52
+				},
+				{
+					name:"Leech",
+					flair:"A skillful leech is better far, than half a hundred men of war.",
+					id:53
+				},
+				{
+					name:"Nasty Surprise",
+					flair:"Supplies!",
+					id:54
+				},
+				{
+					name:"Pandemic",
+					flair:"Spread the sickness.",
+					id:55
+				},
+				{
+					name:"Quasar",
+					flair:"E = mc^(OMG)/wtf",
+					id:56
+				},
+				{
+					name:"Rolling Thunder",
+					flair:"The thunder shall bring forth the pain!",
+					id:57
+				},
+				{
+					name:"Storm Front",
+					flair:"Sometimes lightning does strike twice",
+					id:58
+				},
+				{
+					name:"Legendary Berserker",
+					flair:"\"Never look at my fist\"",
+					id:59
+				},
+				{
+					name:"Legendary Hunter",
+					flair:"\"I will never die.\"",
+					id:60
+				},
+				{
+					name:"Legendary Siren",
+					flair:"\"(Giggles) I\'m really good at this.\"",
+					id:61
+				},
+				{
+					name:"Legendary Soldier",
+					flair:"\"It\'s like Christmas.\"",
+					id:62
+				},
+				{
+					name:"Legendary Psycho",
+					flair:"\"-One day I\'ll escape this hell and you\'ll be gone. - NIPPLE SALADS!\"",
+					id:63
+				},
+				{
+					name:"Legendary Mechromancer",
+					flair:"",
+					id:64
+				},
+				{
+					name:"Blood of Terramorphous",
+					flair:"...His blood could inspire",
+					id:65
+				}
+			]
+		},
+		{
+			name:"unique", 
+			items:  [
+				{
+					name:"Fibber",
+					flair:"Would I lie to you?",
+					id:66
+				},
+				{
+					name:"Flynt\'s Tinderbox",
+					flair:"Good for starting fires.",
+					id:67
+				},
+				{
+					name:"Greed",
+					flair:"Thief.",
+					id:68
+				},
+				{
+					name:"Grog Nozzle",
+					flair:"Hand over the keys, Sugar...",
+					id:69
+				},
+				{
+					name:"Gwen\'s Head",
+					flair:"Thinking outside the box.",
+					id:70
+				},
+				{
+					name:"Judge",
+					flair:"I am free now.",
+					id:71
+				},
+				{
+					name:"Lady Fist",
+					flair:"Love is a Lady Finger. True Love is a Lady Fist.",
+					id:72
+				},
+				{
+					name:"Law",
+					flair:"De Da.",
+					id:73
+				},
+				{
+					name:"Little Evie",
+					flair:"Shock and awwwww! So cute!",
+					id:74
+				},
+				{
+					name:"Pocket Rocket",
+					flair:"Did you ever have the feeling...",
+					id:75
+				},
+				{
+					name:"Rex",
+					flair:"Basically, it\'s a big gun.",
+					id:76
+				},
+				{
+					name:"Rubi",
+					flair:"Whenever I\'m caught between two evils, I take the one I've never tried.",
+					id:77
+				},
+				{
+					name:"Teapot",
+					flair:"Havin\' a tea Partay drinkin\' mah Teeea!",
+					id:78
+				},
+				{
+					name:"Veritas",
+					flair:"Shoulda stopped at one.",
+					id:79
+				},
+				{
+					name:"Blockhead",
+					flair:"Also try Minecraft!",
+					id:80
+				},
+				{
+					name:"Dog",
+					flair:"Because one barrel ain\' enough, and two is too few.",
+					id:81
+				},
+				{
+					name:"Heart Breaker",
+					flair:"I don\'t want to set the world on fire...",
+					id:82
+				},
+				{
+					name:"Hydra",
+					flair:"5 heads of Death!",
+					id:83
+				},
+				{
+					name:"Jolly Roger",
+					flair:"A Pirate\'s Life for me!",
+					id:84
+				},
+				{
+					name:"Landscaper",
+					flair:"Get off my lawn!",
+					id:85
+				},
+				{
+					name:"Octo",
+					flair:"Octo means 9.",
+					id:86
+				},
+				{
+					name:"Orphan Maker",
+					flair:"Makes Orphans Often. Curse of the Nefarious Backlash!",
+					id:87
+				},
+				{
+					name:"RokSalt",
+					flair:"Don\'t retreat. Instead, reload!",
+					id:88
+				},
+				{
+					name:"Shotgun 1340",
+					flair:"I like being a gun.",
+					id:89
+				},
+				{
+					name:"Teeth of Terramorphous",
+					flair:"His teeth made them flee in shame...",
+					id:90
+				},
+				{
+					name:"Tidal Wave",
+					flair:"Flee the Wave, Dude!",
+					id:91
+				},
+				{
+					name:"Triquetra",
+					flair:"Good things kill in threes.",
+					id:92
+				},
+				{
+					name:"Twister",
+					flair:"Putting trouble on the run.",
+					id:93
+				},
+				{
+					name:"Boom Puppy",
+					flair:"Boom! Boom! Boom! BOOM! BOOOM!!!! GOOD DOGGY!!!",
+					id:94
+				},
+				{
+					name:"CHOPPER",
+					flair:"Get to it.",
+					id:95
+				},
+				{
+					name:"Damned Cowboy",
+					flair:"Speak Softly. Carry This.",
+					id:96
+				},
+				{
+					name:"Evil Smasher",
+					flair:"Evil will be SMASHED!!! WITH SMASHING!!! EVIL!!! SMASH!!! ER!!!",
+					id:97
+				},
+				{
+					name:"Hail",
+					flair:"What play thing can you offer me today?",
+					id:98
+				},
+				{
+					name:"Kitten",
+					flair:"We\'re all mad here. I\'m mad. You\'re mad.",
+					id:99
+				},
+				{
+					name:"Rapier",
+					flair:"As I end the refrain, thrust home. Curse of the Porcelain Fist!",
+					id:100
+				},
+				{
+					name:"Scorpio",
+					flair:"Say not in grief: \"He is no more,\" but live in thankfulness that he was.",
+					id:101
+				},
+				{
+					name:"Stinkpot",
+					flair:"We\'re Pirates. We don\'t follow the rules.",
+					id:102
+				},
+				{
+					name:"Stomper",
+					flair:"Oh, sorry, was that your head?",
+					id:103
+				},
+				{
+					name:"Buffalo",
+					flair:"Bison Bison had had had had had Bison Bison Bison shi shi shi.",
+					id:104
+				},
+				{
+					name:"Chère-amie",
+					flair:"Je suis enchanté. Ou est le bibliotheque?",
+					id:105
+				},
+				{
+					name:"Cobra",
+					flair:"Found out about this, I was like DAAAMN, I\'m bringing that gun BACK!",
+					id:106
+				},
+				{
+					name:"Elephant Gun",
+					flair:"Hated by large numbers of people.",
+					id:107
+				},
+				{
+					name:"Fremington\'s Edge",
+					flair:"I can see my house from here.",
+					id:108
+				},
+				{
+					name:"Morningstar",
+					flair:"a Rose by any other name...",
+					id:109
+				},
+				{
+					name:"Pimpernel",
+					flair:"Sink me!",
+					id:110
+				},
+				{
+					name:"Sloth",
+					flair:"Yeah, booze\'ll do that to ya...",
+					id:111
+				},
+				{
+					name:"Trespasser",
+					flair:"I infrequently perish.",
+					id:112
+				},
+				{
+					name:"12 Pounder",
+					flair:"Nec Pluribus Impar, Bitches",
+					id:113
+				},
+				{
+					name:"Creamer",
+					flair:"non-dairy",
+					id:114
+				},
+				{
+					name:"Hive",
+					flair:"full of bees.",
+					id:115
+				},
+				{
+					name:"Roaster",
+					flair:"Toasty!",
+					id:116
+				},
+				{
+					name:"Bane",
+					flair:"in Spain, stays mainly on the plain",
+					id:117
+				},
+				{
+					name:"Chulainn",
+					flair:"Riastrad!",
+					id:118
+				},
+				{
+					name:"Commerce",
+					flair:"I have a Soldier, a Siren, two Scooters and a Claptrap.",
+					id:119
+				},
+				{
+					name:"Lascaux",
+					flair:"The gun of the Bulls.",
+					id:120
+				},
+				{
+					name:"Sand Hawk",
+					flair:"In. Not unlike Errol.",
+					id:121
+				},
+				{
+					name:"1340 Shield",
+					flair:"If you can\'t beat em, join em",
+					id:122
+				},
+				{
+					name:"Aequitas",
+					flair:"The second is better.",
+					id:123
+				},
+				{
+					name:"Captain Blade\'s Manly Man Shield",
+					flair:"What a fabulous window of treatment. Curse of the Elementals!",
+					id:124
+				},
+				{
+					name:"Order",
+					flair:"Chung-gunk!",
+					id:125
+				},
+				{
+					name:"Pot O\' Gold",
+					flair:"Blarney I say! \'Tis blarney!",
+					id:126
+				},
+				{
+					name:"The Rough Rider",
+					flair:"It takes more than that to kill a Bull Mouse.",
+					id:127
+				},
+				{
+					name:"Contraband Sky Rocket",
+					flair:"WARNING: Not intended for indoor use.",
+					id:128
+				},
+				{
+					name:"Fireball",
+					flair:"Porkchop Sandwiches!",
+					id:129
+				},
+				{
+					name:"Fuster Cluck",
+					flair:"Make it rain!",
+					id:130
+				},
+				{
+					name:"Kiss of Death",
+					flair:"It takes two to get one in trouble.",
+					id:131
+				},
+				{
+					name:"Lightning Bolt",
+					flair:"What\'s a jiggawatt?",
+					id:132
+				},
+				{
+					name:"Magic Missile",
+					flair:"No wand required. Just point and shoot.",
+					id:133
+				},
+				{
+					name:"Captain Blade\'s Midnight Star",
+					flair:"Hangin\' around with you is no picnic. Curse of the Cackling Designer!",
+					id:134
+				},
+				{
+					name:"Captain Blade\'s Otto Idol",
+					flair:"Every man for himself. Curser of the Sudden-er Death!",
+					id:135
+				},
+				{
+					name:"Deputy\'s Badge",
+					flair:"Who the hell shot me?",
+					id:136
+				}
+				]},
+				{name:"etech", items:  [
+				{
+					name:"Dahlminator",
+					flair:"Dodge this.",
+					id:137
+				},
+				{
+					name:"Slow Hand",
+					flair:"Take your time, Sugar...",
+					id:138
+				},
+				{
+					name:"SWORDSPLOSION!!!",
+					flair:"Because Mister Torgue Said So.",
+					id:139
+				},
+				{
+					name:"Yellow Jacket",
+					flair:"By the people. For the people.",
+					id:140
+				},
+				{
+					name:"Breath of Terramorphous",
+					flair:"...His breath was of fire...",
+					id:141
+				}
+			]
+		},
+		{
+			name:"seraph", 
+			items:  [
+				{
+					name:"Devastator",
+					flair:"Hail.",
+					id:142
+				},
+				{
+					name:"Infection",
+					flair:"Itchy. Tasty.",
+					id:143
+				},
+				{
+					name:"Stinger",
+					flair:"It\'s like butter, baby.",
+					id:144
+				},
+				{
+					name:"Interfacer",
+					flair:"Because it enters your face. Get it? IT ENTERS YOUR FACE!",
+					id:145
+				},
+				{
+					name:"Omen",
+					flair:"I\'m gonna need you to stand back.",
+					id:146
+				},
+				{
+					name:"Retcher",
+					flair:"Ewww",
+					id:147
+				},
+				{
+					name:"Lead Storm",
+					flair:"What a glorious feeling!",
+					id:148
+				},
+				{
+					name:"Seeker",
+					flair:"Oh yeah, that\'s fair...",
+					id:149
+				},
+				{
+					name:"Seraphim",
+					flair:"Holy? Holy? Holey!",
+					id:150
+				},
+				{
+					name:"Hawk Eye",
+					flair:"Eye certain. Finger Lightning. Aim Death.",
+					id:151
+				},
+				{
+					name:"Patriot",
+					flair:"Our voice will not be silenced!",
+					id:152
+				},
+				{
+					name:"Ahab",
+					flair:"for hate\'s sake.",
+					id:153
+				},
+				{
+					name:"Actualizer",
+					flair:"We need to talk about your DPS report.",
+					id:154
+				},
+				{
+					name:"Florentine",
+					flair:"Double trouble",
+					id:155
+				},
+				{
+					name:"Tattier",
+					flair:"If thou\'st would\'st snitch\'st, acquire thine stitch!",
+					id:156
+				},
+				{
+					name:"Antagonist",
+					flair:"I\'m rubber, you\'re glue.",
+					id:157
+				},
+				{
+					name:"Big Boom Blaster",
+					flair:"For all your big boom blasting needs!",
+					id:158
+				},
+				{
+					name:"Blockade",
+					flair:"Am I living or am I dying?",
+					id:159
+				},
+				{
+					name:"Evolution",
+					flair:"Strength through adversity.",
+					id:160
+				},
+				{
+					name:"Hoplite",
+					flair:"Alone a mere soldier, together an unstoppable phalanx.",
+					id:161
+				},
+				{
+					name:"Pun-chee",
+					flair:"You wanna go, asshole?",
+					id:162
+				},
+				{
+					name:"Sponge",
+					flair:"Highly absorbent!",
+					id:163
+				},
+				{
+					name:"Crossfire",
+					flair:"Find, fix, flank, finish!",
+					id:164
+				},
+				{
+					name:"Meteor Shower",
+					flair:"Not just for wishing on!",
+					id:165
+				},
+				{
+					name:"O-Negative",
+					flair:"Universal donor!",
+					id:166
+				},
+				{
+					name:"Blood of the Seraphs",
+					flair:"Their power courses through you...",
+					id:167
+				},
+				{
+					name:"Breath of the Seraphs",
+					flair:"Their return is to be feared...",
+					id:168
+				},
+				{
+					name:"Might of the Seraphs",
+					flair:"Become the unstoppable force!",
+					id:169
+				},
+				{
+					name:"Shadow of the Seraphs",
+					flair:"A shadow is a copy of self, only shadier.",
+					id:170
+				}
+			]
+		},
+		{
+			name:"pearl", 
+			items:  [
+				{
+					name:"Stalker",
+					flair:"You can run, but you can\'t hide.",
+					id:171
+				},
+				{
+					name:"Unforgiven",
+					flair:"It\'s a helluva thing...",
+					id:172
+				},
+				{
+					name:"Wanderlust",
+					flair:"You never know until you go.",
+					id:173
+				},
+				{
+					name:"Butcher",
+					flair:"Fresh Meat!",
+					id:174
+				},
+				{
+					name:"Carnage",
+					flair:"huh. It shoots rockets.",
+					id:175
+				},
+				{
+					name:"Bearcat",
+					flair:"I love the smell of popcorn in the morning.",
+					id:176
+				},
+				{
+					name:"Bekah",
+					flair:"Shoot them in the face. Twice.",
+					id:177
+				},
+				{
+					name:"Sawbar",
+					flair:"Surpresssing Fires!!!",
+					id:178
+				},
+				{
+					name:"Godfinger",
+					flair:"Such a Cod Finger",
+					id:179
+				},
+				{
+					name:"Storm",
+					flair:"Tut, Tut, it looks like rain.",
+					id:180
+				},
+				{
+					name:"Tunguska",
+					flair:"It will split the sky in two.",
+					id:181
+				},
+				{
+					name:"Avenger",
+					flair:"Counterbution revengence. The reckoning.",
+					id:182
+				},
+				{
+					name:"",
+					flair:"",
+					id:183
+				}
+			]
+		}
+	];
 
-			];
 
-			var t = document.querySelector('#item');
+	var t = document.querySelector('#item');
+	var clone = document.importNode(t.content, true);
+
+	for (var key in itemList) {
+		var target = "#" + itemList[key].name + "-list";
+		console.log(target);
+		var domElement = document.querySelector(target);
+
+		for (var i in itemList[key].items) {
 			var clone = document.importNode(t.content, true);
+			var id = itemList[key].items[i].id;
+			clone.querySelector('.item').setAttribute("data-weapon-id", id);
+			clone.querySelector('.item-name').textContent = itemList[key].items[i].name;
+			clone.querySelector('.item-flair').textContent = itemList[key].items[i].flair;
 
-			for (var key in itemList) {
-				var target = "#" + itemList[key].name + "-list";
-				var domElement = document.querySelector(target);
+			(function(_id, _clone) {
+				clone.querySelector('.got-it').addEventListener("click", function() {
+					if (!this.classList.contains('really')) {
+						this.classList.add("really");
+						_clone.setAttribute("data-weapon-owned", true);
+					}
+					else {
+						this.classList.remove('really');
+						_clone.setAttribute("data-weapon-owned", false);
+					}
 
-				for (var i in itemList[key].items) {
-					var clone = document.importNode(t.content, true);
-					var id = itemList[key].items[i].id;
-					clone.querySelector('.item').setAttribute("data-weapon-id", id);
-					clone.querySelector('.item-name').textContent = itemList[key].items[i].name;
-					clone.querySelector('.item-flair').textContent = itemList[key].items[i].flair;
+					var ownedItems = localStorage.getItem('owned') ? JSON.parse(localStorage.getItem('owned')) : {};
+					ownedItems[_id] = !ownedItems[_id];
+					localStorage.setItem('owned', JSON.stringify(ownedItems));
+				});
+			})(id, clone.querySelector('.item'));
 
-					(function(_id, _clone) {
-						clone.querySelector('.got-it').addEventListener("click", function() {
-							if (!this.classList.contains('really')) {
-							  	this.classList.add("really");
-							  	_clone.setAttribute("data-weapon-owned", true);
-							}
-							else {
-								this.classList.remove('really');
-								_clone.setAttribute("data-weapon-owned", false);
-							}
+			domElement.appendChild(clone);
+		}
+	}
 
-							var ownedItems = localStorage.getItem('owned') ? JSON.parse(localStorage.getItem('owned')) : {};
-							ownedItems[_id] = !ownedItems[_id];
-							localStorage.setItem('owned', JSON.stringify(ownedItems));
-						});
-					})(id, clone.querySelector('.item'));
+	var ownedItems = localStorage.getItem('owned') ? JSON.parse(localStorage.getItem('owned')) : {};
+	for (var i in ownedItems) {
+		var target = document.querySelector('.item[data-weapon-id="' + i + '"]');
+		if (ownedItems[i]) {
+			target.querySelector('.got-it').classList.add('really');
+			target.setAttribute('data-weapon-owned',true);
+		}
+		else {
+			target.setAttribute('data-weapon-owned',false);
+		}
+	}
 
-					domElement.appendChild(clone);
-				}
+	var refreshUI = function() {
+		var elements = document.querySelectorAll('.item');
+		for (var i = 0; i < elements.length; i++) {
+
+			if (!elements[i].getAttribute('data-weapon-owned')) {
+				elements[i].setAttribute('data-weapon-owned', false);
 			}
+		}
+	}
 
-			var ownedItems = localStorage.getItem('owned') ? JSON.parse(localStorage.getItem('owned')) : {};
-			for (var i in ownedItems) {
-				var target = document.querySelector('.item[data-weapon-id="' + i + '"]');
-				if (ownedItems[i]) {
-					target.querySelector('.got-it').classList.add('really');
-					target.setAttribute('data-weapon-owned',true);
-				}
-				else {
-					target.setAttribute('data-weapon-owned',false);
-				}
-			}
-
-			console.log(document.querySelectorAll('.item'))
-			var elements = document.querySelectorAll('.item');
-
-			for (var i = 0; i < elements.length; i++) {
-
-				if (!elements[i].getAttribute('data-weapon-owned')) {
-					elements[i].setAttribute('data-weapon-owned', false);
-				}
-			}
-		</script>
-	</body>
+	refreshUI();
+</script>
+</body>
 </html>

@@ -96,7 +96,7 @@ h2.etech {
 .item {
 	display: inline-block;
 	background-color: #FFF;
-	width: 300px;
+	min-width: 200px;
 	box-shadow: 0 0 1px 1px #111;
 	margin-left: 40px;
 	margin-bottom: 30px;
@@ -115,10 +115,9 @@ h2.etech {
 	color: orange;
 }
 
-#uniques-list .item h2 {
+#unique-list .item h2 {
 	color: #456EB0;
 }
-
 #seraph-list .item h2 {
 	color: #D090A1;
 }
@@ -131,9 +130,16 @@ h2.etech {
 	color: #B00F97;
 }
 
+.button {
+	padding: 20px;
+	background-color: red;
+	display: inline-block;
+}
+
 .item {
 	position: relative;
 	z-index: 1;
+	width: 300px;
 }
 
 .item:before {
@@ -181,6 +187,7 @@ h2.etech {
 	font-family: 'Open Sans';
 	font-weight: 600;
 	font-size: 14px;
+	padding-left: 20px;padding-right: 20px;
 }
 
 .got-it {
@@ -199,7 +206,7 @@ h2.etech {
 }
 
 .got-it.really {
-	background-color: #DCDCDC;
+	background-color: lightgreen;
 }
 
 .got-it:hover {
