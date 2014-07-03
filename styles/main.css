@@ -3,6 +3,11 @@
     src : url('../fonts/CompactBoldBt.ttf');
 }
 
+@font-face{
+    font-family : "CompactaNormal";
+    src : url('../fonts/CompactaNormal.ttf');
+}
+
 html {
 	background-image: url('http://www.dpaperwall.com/wp-content/uploads/Borderlands-2-Desktop-Background-HD-Wallpaper.jpg');
 	background-size: cover;
@@ -10,7 +15,7 @@ html {
 }
 
 body {
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: rgba(0, 0, 0, 0.4);
 	background-size: cover;
 	text-align: center;
 	width: 100%;
@@ -33,26 +38,29 @@ body {
 	font-weight: 200;
 	border-radius: 2px;
 	border: none;
+	box-shadow: 0px 1px 1px 1px #444;
 }
 
 h1 {
 	text-align: center;
 	font-family: 'Compacta';
-	color: #F8FB4D;
+	color: #FBDC29;
+	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 72px;
 	margin-top: 0;
 	padding-top: 30px;
-	text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+	text-shadow: -3px 0px #000, -3px -1px #000, -3px -2px #000, 3px 0px #000, -3px 1px #000, -3px 2px #000, 3px -1px #000, 3px -2px #000, 3px 1px #000, 3px 2px #000, 0px 3px #000, -1px 3px #000, -2px 3px #000, 0px -3px black, -1px -3px black, -2px -3px black, 1px 3px black, 2px 3px black, 1px -3px black, 2px -3px black, -8px 8px black, -8px 3px black, -7px 2px black, -6px 1px black, -5px 0px black, -4px -1px black, -3px 8px black, -2px 7px black, -1px 6px black, 0px 5px black, 1px 4px black;
 }
 
 h2 {
-	font-size: 24px;
+	font-size: 36px;
 	font-family: 'Compacta';
-	text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
 	letter-spacing: 2px;
 	text-align: left;
 	padding-bottom: 16px;
+	text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+	font-weight: 200;
 }
 
 .list {
@@ -62,22 +70,27 @@ h2 {
 
 h2.legendaries {
 	color: orange;
+	text-shadow: -3px 0px #000, -3px -1px #000, -3px -2px #000, 3px 0px #000, -3px 1px #000, -3px 2px #000, 3px -1px #000, 3px -2px #000, 3px 1px #000, 3px 2px #000, 0px 3px #000, -1px 3px #000, -2px 3px #000, 0px -3px black, -1px -3px black, -2px -3px black, 1px 3px black, 2px 3px black, 1px -3px black, 2px -3px black, -8px 8px black, -8px 3px black, -7px 2px black, -6px 1px black, -5px 0px black, -4px -1px black, -3px 8px black, -2px 7px black, -1px 6px black, 0px 5px black, 1px 4px black;
 }
 
 h2.uniques {
 	color: #456EB0;
+	text-shadow: -3px 0px #000, -3px -1px #000, -3px -2px #000, 3px 0px #000, -3px 1px #000, -3px 2px #000, 3px -1px #000, 3px -2px #000, 3px 1px #000, 3px 2px #000, 0px 3px #000, -1px 3px #000, -2px 3px #000, 0px -3px black, -1px -3px black, -2px -3px black, 1px 3px black, 2px 3px black, 1px -3px black, 2px -3px black, -8px 8px black, -8px 3px black, -7px 2px black, -6px 1px black, -5px 0px black, -4px -1px black, -3px 8px black, -2px 7px black, -1px 6px black, 0px 5px black, 1px 4px black;
 }
 
 h2.seraph {
 	color: #D090A1;
+	text-shadow: -3px 0px #000, -3px -1px #000, -3px -2px #000, 3px 0px #000, -3px 1px #000, -3px 2px #000, 3px -1px #000, 3px -2px #000, 3px 1px #000, 3px 2px #000, 0px 3px #000, -1px 3px #000, -2px 3px #000, 0px -3px black, -1px -3px black, -2px -3px black, 1px 3px black, 2px 3px black, 1px -3px black, 2px -3px black, -8px 8px black, -8px 3px black, -7px 2px black, -6px 1px black, -5px 0px black, -4px -1px black, -3px 8px black, -2px 7px black, -1px 6px black, 0px 5px black, 1px 4px black;
 }
 
 h2.pearl {
-	color: #0FB5A7
+	color: #0FB5A7;
+	text-shadow: -3px 0px #000, -3px -1px #000, -3px -2px #000, 3px 0px #000, -3px 1px #000, -3px 2px #000, 3px -1px #000, 3px -2px #000, 3px 1px #000, 3px 2px #000, 0px 3px #000, -1px 3px #000, -2px 3px #000, 0px -3px black, -1px -3px black, -2px -3px black, 1px 3px black, 2px 3px black, 1px -3px black, 2px -3px black, -8px 8px black, -8px 3px black, -7px 2px black, -6px 1px black, -5px 0px black, -4px -1px black, -3px 8px black, -2px 7px black, -1px 6px black, 0px 5px black, 1px 4px black;
 }
 
 h2.etech {
 	color: #B00F97;
+	text-shadow: -3px 0px #000, -3px -1px #000, -3px -2px #000, 3px 0px #000, -3px 1px #000, -3px 2px #000, 3px -1px #000, 3px -2px #000, 3px 1px #000, 3px 2px #000, 0px 3px #000, -1px 3px #000, -2px 3px #000, 0px -3px black, -1px -3px black, -2px -3px black, 1px 3px black, 2px 3px black, 1px -3px black, 2px -3px black, -8px 8px black, -8px 3px black, -7px 2px black, -6px 1px black, -5px 0px black, -4px -1px black, -3px 8px black, -2px 7px black, -1px 6px black, 0px 5px black, 1px 4px black;
 }
 
 .item {
@@ -120,33 +133,42 @@ h2.etech {
 
 .item {
 	position: relative;
+	z-index: 1;
 }
 
 .item:before {
+	transition: opacity 0.5s linear;
+}
+
+.item[data-weapon-owned=false] .overlay:before {
 	position: absolute;
 	height: calc(100% - 44px);
 	width: 100%;
 	left: 0;
 	top: 0;
 	background-color: rgba(0, 0, 0, 0.9);
-
 	content: ' ';
-
-	transition: opacity 0.5s linear;
+	z-index: 100;
 }
 
-.item .got-it.really:before {
+.item[data-weapon-owned=true] .overlay:before {
 	opacity: 0;
 }
 
 .item h2 {
 	font-size: 24px;
-	font-family: 'Compacta';
-	text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
-	letter-spacing: 2px;
+	font-family: 'CompactaNormal';
+	font-weight: 800;
 	border-bottom: 1px solid #DCDCDC;
 	padding-bottom: 16px;
 	text-align: center;
+	position: relative;
+	z-index: 9999;
+}
+
+.item[data-weapon-owned=false] h2 {
+	border: none;
+	text-shadow: none;
 }
 
 .item-image {
@@ -187,7 +209,7 @@ h2.etech {
 
 .got-it:hover .custom-checkbox {
 	text-indent: 0;
-	color: rgba(0, 0, 0, 0.8);
+	color: rgba(0, 0, 0, 0.6);
 }
 
 .custom-checkbox {
@@ -202,4 +224,6 @@ h2.etech {
 	color: rgba(0, 0, 0, 0);
 	line-height: 14px;
 	transition: color 0.2s linear;
+	font-size: 30px;
+	line-height: 1px;
 }

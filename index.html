@@ -32,6 +32,7 @@
 		<template id="item">
 			<div class="item">
 				<h2 class="item-name">Item Name</h2>
+				<div class="overlay"></div>
 				<img src="" class="item-image">
 				<h3 class="item-flair">Cold in April</h3>
 				<div class="got-it"><div class="custom-checkbox">✓</div>Obtenu !</div>
@@ -58,21 +59,51 @@
 				{
 					name: "uniques",
 					items: [
+						{
+							name: 'Fibber',
+							flair: 'Would I lie to you?',
+							id: 5
+						},
+						{
+							name: 'Flynt\'s Tinderbox',
+							flair: 'Good for starting fires',
+							id: 6
+						},
+						{
+							name: 'Greed',
+							flair: 'Thief.',
+							id: 7
+						}
 					]
 				},
 				{
 					name: "seraph",
 					items: [
+						{
+							name: 'Devastator',
+							flair: 'Hail.',
+							id: 4
+						}
 					]
 				},
 				{
 					name: "pearl",
 					items: [
+						{
+							name: 'Stalker',
+							flair: 'You can run, but you can\'t hide',
+							id: 8
+						}
 					]
 				},
 				{
 					name: "etech",
 					items: [
+						{
+							name: 'Dahlminator',
+							flair: 'Dodge this.',
+							id: 3
+						}
 					]
 				},
 
@@ -92,20 +123,22 @@
 					clone.querySelector('.item-name').textContent = itemList[key].items[i].name;
 					clone.querySelector('.item-flair').textContent = itemList[key].items[i].flair;
 
-					(function(_id) {
+					(function(_id, _clone) {
 						clone.querySelector('.got-it').addEventListener("click", function() {
 							if (!this.classList.contains('really')) {
-							  this.classList.add("really");
+							  	this.classList.add("really");
+							  	_clone.setAttribute("data-weapon-owned", true);
 							}
 							else {
 								this.classList.remove('really');
+								_clone.setAttribute("data-weapon-owned", false);
 							}
 
 							var ownedItems = localStorage.getItem('owned') ? JSON.parse(localStorage.getItem('owned')) : {};
 							ownedItems[_id] = !ownedItems[_id];
 							localStorage.setItem('owned', JSON.stringify(ownedItems));
 						});
-					})(id);
+					})(id, clone.querySelector('.item'));
 
 					domElement.appendChild(clone);
 				}
@@ -116,6 +149,20 @@
 				var target = document.querySelector('.item[data-weapon-id="' + i + '"]');
 				if (ownedItems[i]) {
 					target.querySelector('.got-it').classList.add('really');
+					target.setAttribute('data-weapon-owned',true);
+				}
+				else {
+					target.setAttribute('data-weapon-owned',false);
+				}
+			}
+
+			console.log(document.querySelectorAll('.item'))
+			var elements = document.querySelectorAll('.item');
+
+			for (var i = 0; i < elements.length; i++) {
+
+				if (!elements[i].getAttribute('data-weapon-owned')) {
+					elements[i].setAttribute('data-weapon-owned', false);
 				}
 			}
 		</script>
