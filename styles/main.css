@@ -6,6 +6,7 @@
 html {
 	background-image: url('http://www.dpaperwall.com/wp-content/uploads/Borderlands-2-Desktop-Background-HD-Wallpaper.jpg');
 	background-size: cover;
+	background-attachment: fixed;
 }
 
 body {
@@ -121,7 +122,7 @@ h2.etech {
 	position: relative;
 }
 
-.item .got-it:before {
+.item:before {
 	position: absolute;
 	height: calc(100% - 44px);
 	width: 100%;
