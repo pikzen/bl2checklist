@@ -136,10 +136,15 @@ h2.etech {
 	display: inline-block;
 }
 
+.item[data-visible=false] {
+	display: none;
+}
+
 .item {
 	position: relative;
 	z-index: 1;
 	width: 300px;
+	transition: height 0.5s linear;
 }
 
 .item:before {
@@ -196,16 +201,16 @@ h2.etech {
 	border-top: 1px solid #DCDCDC;
 }
 
-.got-it.really .custom-checkbox {
+.item[data-weapon-owned=true] .custom-checkbox {
 	color: #0099CC;
 	text-indent: 0;
 }
 
-.got-it.really:hover .custom-checkbox {
+.item[data-weapon-owned=true] .got-it:hover .custom-checkbox {
 	color: #0099cc;
 }
 
-.got-it.really {
+.item[data-weapon-owned=true] .got-it {
 	background-color: lightgreen;
 }
 

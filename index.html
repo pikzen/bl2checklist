@@ -10,7 +10,7 @@
 	<h1>Borderlands 2 Checklist</h1>
 
 	<div class="search-bar">
-		<input type="text" placeholder="Search // Not Working">
+		<input type="text" id="search" placeholder="Search">
 	</div>
 
 	<div id="legendary-list" class="list">
@@ -30,15 +30,16 @@
 		<h2 class="header etech">E-Tech</h2>
 	</div>
 	<template id="item">
-		<div class="item">
+		<div class="item" data-visible=true>
 			<h2 class="item-name">Item Name</h2>
 			<div class="overlay"></div>
 			<img src="" class="item-image">
 			<h3 class="item-flair">Cold in April</h3>
-			<div class="got-it"><div class="custom-checkbox">✓</div>Obtenu !</div>
+			<div class="got-it"><div class="custom-checkbox">✓</div>Got it !</div>
 		</div>
 	</template>
 
+	<script type="text/javascript" src="scripts/bl2.js"></script>
 	<script type="text/javascript">
 		var itemList = [
 		{
@@ -985,66 +986,41 @@
 		}
 	];
 
+	var list = new ListGenerator(itemList,  "#item");
+	list.fillPage();
+</script>
+<script type="text/javascript">
+	var searchBox = document.getElementById("search");
 
-	var t = document.querySelector('#item');
-	var clone = document.importNode(t.content, true);
-
-	for (var key in itemList) {
-		var target = "#" + itemList[key].name + "-list";
-		console.log(target);
-		var domElement = document.querySelector(target);
-
-		for (var i in itemList[key].items) {
-			var clone = document.importNode(t.content, true);
-			var id = itemList[key].items[i].id;
-			clone.querySelector('.item').setAttribute("data-weapon-id", id);
-			clone.querySelector('.item-name').textContent = itemList[key].items[i].name;
-			clone.querySelector('.item-flair').textContent = itemList[key].items[i].flair;
-
-			(function(_id, _clone) {
-				clone.querySelector('.got-it').addEventListener("click", function() {
-					if (!this.classList.contains('really')) {
-						this.classList.add("really");
-						_clone.setAttribute("data-weapon-owned", true);
-					}
-					else {
-						this.classList.remove('really');
-						_clone.setAttribute("data-weapon-owned", false);
-					}
-
-					var ownedItems = localStorage.getItem('owned') ? JSON.parse(localStorage.getItem('owned')) : {};
-					ownedItems[_id] = !ownedItems[_id];
-					localStorage.setItem('owned', JSON.stringify(ownedItems));
-				});
-			})(id, clone.querySelector('.item'));
-
-			domElement.appendChild(clone);
+	searchBox.addEventListener("keypress", function(e) {
+		var search = this.value.toLowerCase();
+		// Fx keys
+		if (e.keyCode >= 112 && e.keyCode <= 123) {
+			return;
 		}
-	}
 
-	var ownedItems = localStorage.getItem('owned') ? JSON.parse(localStorage.getItem('owned')) : {};
-	for (var i in ownedItems) {
-		var target = document.querySelector('.item[data-weapon-id="' + i + '"]');
-		if (ownedItems[i]) {
-			target.querySelector('.got-it').classList.add('really');
-			target.setAttribute('data-weapon-owned',true);
+		if (e.keyCode == 8) {
+			search = search.substring(0, search.length - 1);
 		}
 		else {
-			target.setAttribute('data-weapon-owned',false);
+			search += e.key.toLowerCase();
 		}
-	}
+		var elements =  document.querySelectorAll('.item');
 
-	var refreshUI = function() {
-		var elements = document.querySelectorAll('.item');
 		for (var i = 0; i < elements.length; i++) {
-
-			if (!elements[i].getAttribute('data-weapon-owned')) {
-				elements[i].setAttribute('data-weapon-owned', false);
+			if (search == "") {
+				elements[i].setAttribute("data-visible", true);
+			}
+			else {
+				if (elements[i].getAttribute("data-weapon-name").toLowerCase().indexOf(search) == -1) {
+					elements[i].setAttribute("data-visible", false);
+				}
+				else {
+					elements[i].setAttribute("data-visible", true);
+				}
 			}
 		}
-	}
-
-	refreshUI();
+	});
 </script>
 </body>
 </html>
